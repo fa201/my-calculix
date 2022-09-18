@@ -1,0 +1,4 @@
+# ISO view Y up
+rot x
+rot r 135
+rot u 45
