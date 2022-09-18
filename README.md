@@ -11,12 +11,12 @@ This is related to CrunchiX (CCX) and Graphix (CGX).
 
 ## Configuration
 Configuration files for CGX start up and a few macro to set isometric views. 
-Check Read_me.txt files for information and renaming instructions.
+Check *Read_me.txt* files for information and renaming instructions.
 
 ## Help
 Two HTML files helps to reach CCX and CGX HTML files:
-- ccx_extract.html: link to HTML keywords for CCX documentation.
-- cgx_quick_reference.html: link to HTML keywords for CGX documentation.
+- *ccx_extract.html*: link to HTML keywords for CCX documentation.
+- *cgx_quick_reference.html*: link to HTML keywords for CGX documentation.
 Each HTML file should be copied to the CCX or CGX HTML documentation folder 
 
 ## Tutorials
