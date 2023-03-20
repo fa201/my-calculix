@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fabrice Pépin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Necessary for the proper size of screen on devices -->
+    <style>
+      html {
+      font-size: 62.5%;   /* Define standard font size as 0.625*16px=10px. So 2rem = 20 px */
+      background-color: white;
+      }
+
+      body {
+      font-family: Verdana, Arial, Helvetica, "Lucida Sans Unicode", Verdana, sans-serif;
+      font-size: 1.6rem;
+      min-height: 100vh;      /* Height is the one of browser */
+      max-width: 1400px;
+      margin: 0 auto;         /* Center the body widthwise */
+      padding: 0 1rem;
+      background-color: hsl(60, 20%, 98%);
+      line-height: 2.2rem;
+      color: hsl(0, 0%, 0%);
+      }
+
+      .header_title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: hsl(0, 0%, 0%);
+      height: 5rem;
+      line-height: 5rem;      /* Equal to height in order to center vertically */
+      }
+
+      p {
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+      //background-color: yellow;
+      margin-top: 0.5rem;
+      }
+
+      h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: hsl(210, 80%, 0%);
+      padding-top: 0.5rem;
+      margin-bottom: 0;
+      }
+
+      h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: hsl(210, 80%, 0%);
+      padding-top: 0.5rem;
+      margin-bottom: 0;
+      }
+
+      div {
+      padding: 0rem 0.4rem;
+      }
+
+      #general {
+      background-color: hsl(210, 0%, 87%);
+      }
+
+      #installation {
+      background-color: hsl(210, 0%, 70%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #archives {
+      background-color: hsl(210, 10%, 50%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #units {
+      background-color: hsl(40, 100%, 35%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #yahoo {
+      background-color: hsl(50, 40%, 50%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #step {
+      background-color: hsl(60, 75%, 65%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #model {
+      background-color: hsl(320, 70%, 85%);
+      padding-bottom: 0.1rem;
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #output {
+      background-color: hsl(360, 60%, 75%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #contour {
+      background-color: hsl(310, 70%, 75%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #preprocessing {
+      background-color: hsl(115, 60%, 75%);
+      padding-bottom: 0.5rem;
+      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+      }
+
+      #prepare {
+      background-color: hsl(130, 52%, 60%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #mesh {
+      background-color: hsl(120, 70%, 60%);
+      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+      padding-bottom: 0.1rem;
+      }
+
+      #oned {
+      background-color: hsl(70, 65%, 50%);
+      margin: 0.3rem 0 0 0;
+      }
+
+      #twod {
+      background-color: hsl(120, 52%, 48%);
+      margin: 0.3rem 0 0 0;
+      }
+
+      #threed {
+      background-color: hsl(120, 40%, 37%);
+      margin: 0.3rem 0 0 0;
+      }
+
+      #container {
+      background-color: hsl(210, 100%, 85%);
+      padding-bottom: 0.5rem;
+      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+      }
+
+      #set {
+      background-color: hsl(210, 100%, 77%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #group {
+      background-color: hsl(205, 70%, 65%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #sequence {
+      background-color: hsl(215, 55%, 55%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      .indent1 {
+      margin: 0rem 4.5rem;        // Keep same left margin as boxes
+      }
+
+      /*a:link, a:visited {
+      text-decoration: none;  /* Remove underlining */
+      color: hsl(0, 0%, 0%);
+      }*/
+    </style>
+    <title>CCX - tips</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header_title">CCX - tips</div>
+    </header>
+    <main>
+      <div id="general">
+        <h1>General</h1>
+        <div id="installation">
+          <h2>Installation and set up</h2>
+          <div class="indent1">
+            <p>
+              For Linux Ubuntu, copy cgx and ccx programs from the website and paste at <em>/usr/local/bin</em>. Then make an alias to these program to launch directly from the folder of the study. Make sure the program has execute right (7xx with <em>chmod</em>)
+            </p>
+            <p>
+              To switch from 1 to 4 CPU, <em>export OMP_NUM_THREADS=4</em>.
+            </p>
+          </div>
+        </div>
+
+        <div id="archives">
+          <h2>Archives</h2>
+          <div class="indent1">
+            <p>
+              Old versions of CCX and CGX are kept on the official website. You need to specify the type of files and the version in the URL. Here are all files related to CGX 2.13:
+                <ul>
+                  <li>http://dhondt.de/cgx_2.13.bz2</li>
+                  <li>http://dhondt.de/cgx_2.13.INSTALL</li>
+                  <li>http://dhondt.de/cgx_2.13.pdf</li>
+                  <li>http://dhondt.de/cgx_2.13.htm.tar.bz2</li>
+                  <li>http://dhondt.de/cgx_2.13.exa.tar.bz2</li>
+                </ul>
+                Here are all files related to CXX 2.13:
+                <ul>
+                  <li>http://dhondt.de/ccx_2.13.README.INSTALL</li>
+                  <li>http://dhondt.de/ccx_2.13.tar.bz2</li>
+                  <li>http://dhondt.de/ccx_2.13.htm.tar.bz2</li>
+                  <li>http://dhondt.de/ccx_2.13.pdf</li>
+                  <li>http://dhondt.de/ccx_2.13.test.tar.bz2</li>
+                </ul>
+            </p>
+          </div>
+        </div>
+
+        <div id="units">
+          <h2>Units</h2>
+          <div class="indent1">
+            <p>
+              This is a source of mistake so I always work with the same system: mm, ton sec.
+                <ul>
+                  <li>length: mm</li>
+                  <li>mass: ton</li>
+                  <li>time: s</li>
+                  <li>energy, work: mJ</li>
+                  <li>mass per volum: ton/mm3</li>
+                  <li>stress, pressure: MPa</li>
+                  <li>force: N</li>
+                  <li>acceleration: mm/s2</li>
+                  <li>velocity: mm/s</li>
+                  <li>frequency: Hz</li>
+                </ul>
+              This gives for steel: E = 210 000 MPa, rho= 7.8e-9.
+            </p>
+          </div>
+        </div>
+
+        <div id="yahoo"><h2>Information retrieved from YahooGroup</h2>
+          <div class="indent1">
+            <p>Shape functions are those from text books. No ammendments are performed for locking phenomena.</p>
+            <p>Contacts: Face-to-face contact should preferably be used with the linear pressure-overclosure behavior. The only constant in that case is the spring constant. Use of *FRICTION further requires a friction coefficient and a stick slope. For steel I usually take 1.e7 MPa/mm for the spring stiffness and 1.e5 MPa/mm for the stick slope.</p>
+            <p>Merge *.inp files with ID offset: <em>read ccx-file inp add</em></p>
+            <p>DLOAD on 3D element: the pressure is always directed into the body. This does not depend on whether the face is reflective or black.</p>
+            <p>*FREQUENCY works only for 3D elements.</p>
+            <p>For quadratic elements, stress at midpoints are obtained by averaging the end point strssses.</p>
+            <p>Beam expansion:  if you do not use OUTPUT=3D you get the mean stress over the thickness, which is a very bad approximation for beams under bending.</p>
+            <p>All elements in CalculiX use the textbook shape functions, i.e. no amendments are performed for locking phenomena.</p>
+            <p>Error estimator: values are available internally.</p>
+            <p>Output format: binary files (*NODE OUTPUT) have a better accuray than ASCII files (*NODE FILE). <a href="https://calculix.discourse.group/t/full-precision-output-at-nodes-and-integration-points/126/5" target="_blank">Source</a>.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
