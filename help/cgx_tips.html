@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fabrice Pépin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Necessary for the proper size of screen on devices -->
+    <style>
+      html {
+      font-size: 62.5%;   /* Define standard font size as 0.625*16px=10px. So 2rem = 20 px */
+      background-color: white;
+      }
+
+      body {
+      font-family: Verdana, Arial, Helvetica, "Lucida Sans Unicode", Verdana, sans-serif;
+      font-size: 1.6rem;
+      min-height: 100vh;      /* Height is the one of browser */
+      max-width: 1400px;
+      margin: 0 auto;         /* Center the body widthwise */
+      padding: 0 1rem;
+      background-color: hsl(60, 20%, 98%);
+      line-height: 2.2rem;
+      color: hsl(0, 0%, 0%);
+      }
+
+      .header_title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: hsl(0, 0%, 0%);
+      height: 5rem;
+      line-height: 5rem;      /* Equal to height in order to center vertically */
+      }
+
+      p {
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+      //background-color: yellow;
+      margin-top: 0.5rem;
+      }
+
+      h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: hsl(210, 80%, 0%);
+      padding-top: 0.5rem;
+      margin-bottom: 0;
+      }
+
+      h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: hsl(210, 80%, 0%);
+      padding-top: 0.5rem;
+      margin-bottom: 0;
+      }
+
+      div {
+      padding: 0rem 0.4rem;
+      }
+
+      #general {
+      background-color: hsl(210, 0%, 87%);
+      }
+
+      #installation {
+      background-color: hsl(210, 0%, 70%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #archives {
+      background-color: hsl(210, 10%, 50%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #yahoo {
+      background-color: hsl(40, 100%, 35%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      .indent1 {
+      margin: 0rem 4.5rem;        // Keep same left margin as boxes
+      }
+
+      a:link, a:visited {
+      text-decoration: none;  /* Remove underlining */
+      color: hsl(0, 0%, 0%);
+      }
+    </style>
+    <title>CGX - tips</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header_title">CGX - tips</div>
+    </header>
+    <main>
+      <div id="general">
+        <h1>General</h1>
+        <div id="installation">
+          <h2>Installation and set up</h2>
+          <div class="indent1">
+          <p>
+            For Linux Ubuntu, copy cgx and ccx programs from the website and paste at <em>/usr/local/bin</em>. Then make an alias to <em>ccx</em> and <em>cgx</em> to launch directly from the folder of the study. Make sure the program has execute right (7xx with <em>chmod</em>)
+          </p>
+          <p>
+            To switch from 1 to 4 CPU, <em>export OMP_NUM_THREADS=4</em>.
+          </p>
+          </div>
+        </div>
+
+      <div id="archives">
+        <h2>Archives</h2>
+        <div class="indent1">
+          <p>
+            Old versions of CCX and CGX are kept on the official website. You need to specify the type of files and the version in the URL. Here are all files related to CGX 2.13:
+            <ul>
+              <li>http://dhondt.de/cgx_2.13.bz2</li>
+              <li>http://dhondt.de/cgx_2.13.INSTALL</li>
+              <li>http://dhondt.de/cgx_2.13.pdf</li>
+              <li>http://dhondt.de/cgx_2.13.htm.tar.bz2</li>
+              <li>http://dhondt.de/cgx_2.13.exa.tar.bz2</li>
+            </ul>
+            Here are all files related to CXX 2.13:
+            <ul>
+              <li>http://dhondt.de/ccx_2.13.README.INSTALL</li>
+              <li>http://dhondt.de/ccx_2.13.tar.bz2</li>
+              <li>http://dhondt.de/ccx_2.13.htm.tar.bz2</li>
+              <li>http://dhondt.de/ccx_2.13.pdf</li>
+              <li>http://dhondt.de/ccx_2.13.test.tar.bz2</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div id="yahoo">
+        <h2>Information retrieved from YahooGroup</h2>
+        <div class="indent1">
+          <p>Meshing: aspect ration &lt; 2.5 or 3 for tetra. </p>
+          <p>Set names are case sensitive for CGX.</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

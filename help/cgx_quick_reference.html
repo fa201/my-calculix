@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fabrice Pépin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Necessary for the proper size of screen on devices -->
+    <style>
+      html {
+      font-size: 62.5%;   /* Define standard font size as 0.625*16px=10px. So 2rem = 20 px */
+      background-color: white;
+      }
+
+      body {
+      font-family: Verdana, Arial, Helvetica, "Lucida Sans Unicode", Verdana, sans-serif;
+      font-size: 1.5rem;
+      min-height: 100vh;      /* Height is the one of browser */
+      max-width: 1400px;
+      margin: 0 auto;         /* Center the body widthwise */
+      padding: 0 1rem;
+      background-color: hsl(60, 20%, 98%);
+      line-height: 2.2rem;
+      color: hsl(0, 0%, 0%);
+      }
+
+      .header_title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: hsl(0, 0%, 0%);
+      height: 5rem;
+      line-height: 5rem;      /* Equal to height in order to center vertically */
+      }
+
+      p {
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      }
+
+      h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: hsl(210, 80%, 0%);
+      padding-top: 0.5rem;
+      margin-bottom: 0;
+      }
+
+      h2 {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: hsl(210, 80%, 0%);
+      padding-top: 0.5rem;
+      margin-bottom: 0;
+      }
+
+      div {
+      padding: 0rem 0.4rem;
+      }
+
+      #global {
+      background-color: hsl(210, 0%, 87%);
+      }
+
+      #application {
+      background-color: hsl(210, 0%, 70%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #batch_control {
+      background-color: hsl(210, 10%, 50%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #inspect {
+      background-color: hsl(40, 100%, 35%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #modify {
+      background-color: hsl(50, 40%, 50%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #display {
+      background-color: hsl(60, 75%, 65%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #postprocessing {
+      background-color: hsl(320, 70%, 85%);
+      padding-bottom: 0.1rem;
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #animation {
+      background-color: hsl(360, 60%, 75%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #contour {
+      background-color: hsl(310, 70%, 75%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #preprocessing {
+      background-color: hsl(115, 60%, 75%);
+      padding-bottom: 0.5rem;
+      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+      }
+
+      #prepare {
+      background-color: hsl(130, 52%, 60%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #mesh {
+      background-color: hsl(120, 70%, 60%);
+      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+      padding-bottom: 0.1rem;
+      }
+
+      #oned {
+      background-color: hsl(70, 65%, 50%);
+      margin: 0.3rem 0 0 0;
+      }
+
+      #twod {
+      background-color: hsl(120, 52%, 48%);
+      margin: 0.3rem 0 0 0;
+      }
+
+      #threed {
+      background-color: hsl(120, 40%, 37%);
+      margin: 0.3rem 0 0 0;
+      }
+
+      #container {
+      background-color: hsl(210, 100%, 85%);
+      padding-bottom: 0.5rem;
+      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+      }
+
+      #set {
+      background-color: hsl(210, 100%, 77%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #group {
+      background-color: hsl(205, 70%, 65%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      #sequence {
+      background-color: hsl(215, 55%, 55%);
+      margin: 0.3rem 4.5rem 0 4.5rem;
+      }
+
+      .indent1 {
+      margin: 0rem 4.5rem;        // Keep same left margin as boxes
+      }
+
+      a:link, a:visited {
+      text-decoration: none;  /* Remove underlining */
+      color: hsl(0, 0%, 0%);
+      }
+
+      em {
+      color: hsl(310, 75%, 50%);
+      font-style: normal;
+      }
+    </style>
+    <title>CGX - quick reference</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header_title">CGX - quick reference</div>
+    </header>
+    <main>
+      <h2>Entity selection</h2>
+      <p>
+          <em>n</em> nodes, <em>e</em> elements, <em>f</em> faces, <em>se</em> sets, <em>p</em> points, <em>l</em> lines, <em>c</em> combined lines, <em>s</em> surfaces, <em>b</em> bodies, <em>t</em> node texts, <em>S</em> nurb surfaces, <em>L</em> nurb lines, <em>sh</em> shapes and <em>si</em> shaded surfaces.<br>
+          Catch several entities: type <em>a</em> all, define corners of rectangular picking area with 2 <em>r</em>, to catch only the entity closest to you type <em>i</em>,  move the pointer over the entities and press one of the above command.<br>
+          <em>&uarr;</em> previous command and <em>&darr;</em> next command.<br>
+          <em>PAGE UP</em> previous set (last command was <em>plot</em> or <em>plus</em>) or previous loadcase. Likewise <em>PAGE DOWN</em> next set or loadcase.
+        </p>
+
+      <h2>Colors</h2>
+      <p>
+          <em>b</em> black, <em>r</em> red, <em>g</em> green, <em>b</em> blue, <em>m</em> magenta, <em>y</em> yellow, <em>t</em> turquoise, <em>n</em> neutral and <em>w</em> white.
+        </p>
+
+      <div id="global">
+        <h1>Global</h1>
+        <div class="indent1">
+          <p>
+            <a href="node68.html" target="_blank">asgn</a>
+            <a href="node103.html" target="_blank">gonly</a>
+            <a href="node174.html" target="_blank">read</a>
+            <a href="node180.html" target="_blank">send</a>
+            <a href="node191.html" target="_blank">split</a>
+            <a href="node192.html" target="_blank">stack</a>
+            <a href="node206.html" target="_blank">val</a>
+            <a href="node207.html" target="_blank">valu</a>
+          </p>
+        </div>
+
+        <div id="application">
+          <h2>Application</h2>
+          <div class="indent1">
+            <p>
+              <a href="node73.html" target="_blank">capt</a>
+              <a href="node96.html" target="_blank">exit</a>
+              <a href="node100.html" target="_blank">font</a>
+              <a href="node110.html" target="_blank">help</a>
+              <a href="node113.html" target="_blank">init</a>
+              <a href="node124.html" target="_blank">menu</a>
+              <a href="node173.html" target="_blank">quit</a>
+              <a href="node178.html" target="_blank">save</a>
+              <a href="node197.html" target="_blank">sys</a>
+              <a href="node205.html" target="_blank">ulin</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="batch_control">
+          <h2>Batch control</h2>
+          <div class="indent1">
+            <p>
+              <a href="node71.html" target="_blank">break</a>
+              <a href="node78.html" target="_blank">cont</a>
+              <a href="node111.html" target="_blank">if</a>
+              <a href="node194.html" target="_blank">stop</a>
+              <a href="node208.html" target="_blank">view</a>
+              <a href="node210.html" target="_blank">while</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="inspect">
+          <h2>Inspect</h2>
+          <div class="indent1">
+            <p>
+              <a href="node67.html" target="_blank">area</a>
+              <a href="node93.html" target="_blank">enq</a>
+              <a href="node115.html" target="_blank">length</a>
+              <a href="node146.html" target="_blank">prnt</a>
+              <a href="node155.html" target="_blank">qdis</a>
+              <a href="node198.html" target="_blank">test</a>
+              <a href="node209.html" target="_blank">volu</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="modify">
+          <h2>Modify</h2>
+          <div class="indent1">
+            <p>
+              <a href="node83.html" target="_blank">del</a>
+              <a href="node108.html" target="_blank">gtol</a>
+              <a href="node125.html" target="_blank">merge</a>
+              <a href="node133.html" target="_blank">move</a>
+              <a href="node139.html" target="_blank">norm</a>
+              <a href="node147.html" target="_blank">proj</a>
+              <a href="node154.html" target="_blank">qdel</a>
+              <a href="node162.html" target="_blank">qmov</a>
+              <a href="node166.html" target="_blank">qnod</a>
+              <a href="node200.html" target="_blank">tra</a>
+              <a href="node201.html" target="_blank">trfm</a>
+              <a href="node213.html" target="_blank">zap</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="display">
+          <h2>Display</h2>
+          <div class="indent1">
+            <p>
+              <a href="node75.html" target="_blank">cntr</a>
+              <a href="node82.html" target="_blank">cut</a>
+              <a href="node101.html" target="_blank">frame</a>
+              <a href="node131.html" target="_blank">minus</a>
+              <a href="node143.html" target="_blank">plot</a>
+              <a href="node144.html" target="_blank">plus</a>
+              <a href="node149.html" target="_blank">qali</a>
+              <a href="node152.html" target="_blank">qcnt</a>
+              <a href="node153.html" target="_blank">qcut</a>
+              <a href="node177.html" target="_blank">rot</a>
+              <a href="node204.html" target="_blank">ucut</a>
+              <a href="node214.html" target="_blank">zoom</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="postprocessing">
+          <h2>Post-processing</h2>
+          <div class="indent1">
+            <p>
+              <a href="node104.html" target="_blank">graph</a>
+              <a href="node172.html" target="_blank">qtext</a>
+              <a href="node179.html" target="_blank">scal</a>
+              <a href="node202.html" target="_blank">text</a>
+              <a href="node199.html" target="_blank">thrs</a>
+            </p>
+          </div>
+          <div id="animation">
+            <h2>Animation</h2>
+            <div class="indent1">
+                <p>
+                  <a href="node66.html" target="_blank">anim</a>
+                  <a href="node109.html" target="_blank">hcpy</a>
+                  <a href="node134.html" target="_blank">movi</a>
+                </p>
+            </div>
+          </div>
+          <div id="contour">
+            <h2>Contour plot</h2>
+            <div class="indent1">
+              <p>
+                <a href="node74.html" target="_blank">cmap</a>
+                <a href="node76.html" target="_blank">col</a>
+                <a href="node86.html" target="_blank">ds</a>
+                <a href="node99.html" target="_blank">flpc</a>
+                <a href="node119.html" target="_blank">map</a>
+                <a href="node121.html" target="_blank">max</a>
+                <a href="node122.html" target="_blank">maxc</a>
+                <a href="node123.html" target="_blank">maxr</a>
+                <a href="node128.html" target="_blank">min</a>
+                <a href="node129.html" target="_blank">minc</a>
+                <a href="node130.html" target="_blank">minr</a>
+                <a href="node132.html" target="_blank">mm</a>
+                <a href="node193.html" target="_blank">steps</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="preprocessing">
+          <h2>Pre-processing</h2>
+          <div class="indent1">
+            <p>
+              <a href="node98.html" target="_blank">flip</a>
+              <a href="node120.html" target="_blank">mats</a>
+              <a href="node137.html" target="_blank">neigh</a>
+              <a href="node159.html" target="_blank">qflp</a>
+              <a href="node178.html" target="_blank">save</a>
+              <a href="node191.html" target="_blank">split</a>
+              <a href="node196.html" target="_blank">swep</a>
+            </p>
+          </div>
+
+          <div id="prepare">
+            <h2>Prepare</h2>
+            <div class="indent1">
+              <p>
+                <a href="node69.html" target="_blank">bia</a>
+                <a href="node85.html" target="_blank">div</a>
+                <a href="node87.html" target="_blank">elem</a>
+                <a href="node90.html" target="_blank">elty</a>
+                <a href="node136.html" target="_blank">mshp</a>
+                <a href="node150.html" target="_blank">qbia</a>
+                <a href="node156.html" target="_blank">qdiv</a>
+              </p>
+            </div>
+          </div>
+
+          <div id="mesh"><h2>Mesh</h2>
+            <div class="indent1">
+              <p>
+                <a href="node94.html" target="_blank">eprop</a>
+                <a href="node95.html" target="_blank">equal</a>
+                <a href="node126.html" target="_blank">mesh</a>
+                <a href="node127.html" target="_blank">mids</a>
+                <a href="node138.html" target="_blank">node</a>
+                <a href="node163.html" target="_blank">qmsh</a>
+              </p>
+              <div id="oned"><h2>1D</h2>
+                <div class="indent1">
+                  <p>
+                    <a href="node80.html" target="_blank">corrad</a>
+                    <a href="node97.html" target="_blank">fil</a>
+                    <a href="node112.html" target="_blank">int</a>
+                    <a href="node114.html" target="_blank">lcmb</a>
+                    <a href="node116.html" target="_blank">line</a>
+                    <a href="node117.html" target="_blank">lnor</a>
+                    <a href="node140.html" target="_blank">nurl</a>
+                    <a href="node145.html" target="_blank">pnt</a>
+                    <a href="node158.html" target="_blank">qfil</a>
+                    <a href="node160.html" target="_blank">qint</a>
+                    <a href="node161.html" target="_blank">qlin</a>
+                    <a href="node164.html" target="_blank">qnor</a>
+                    <a href="node165.html" target="_blank">qpnt</a>
+                    <a href="node170.html" target="_blank">qspl</a>
+                    <a href="node182.html" target="_blank">seqc</a>
+                    <a href="node183.html" target="_blank">seql</a>
+                  </p>
+                </div>
+              </div>
+              <div id="twod"><h2>2D</h2>
+                <div class="indent1">
+                  <p>
+                    <a href="node107.html" target="_blank">gsur</a>
+                    <a href="node141.html" target="_blank">nurs</a>
+                    <a href="node169.html" target="_blank">qshp</a>
+                    <a href="node171.html" target="_blank">qsur</a>
+                    <a href="node190.html" target="_blank">shpe</a>
+                    <a href="node195.html" target="_blank">surf</a>
+                  </p>
+                </div>
+              </div>
+                <div id="threed"><h2>3D</h2>
+                  <div class="indent1">
+                    <p>
+                      <a href="node70.html" target="_blank">body</a>
+                      <a href="node102.html" target="_blank">gbod</a>
+                      <a href="node151.html" target="_blank">qbod</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div id="container">
+          <h2>Containers</h2>
+          <div id="set">
+            <h2>Sets</h2>
+            <div class="indent1">
+              <p>
+                <a href="node77.html" target="_blank">comp</a>
+                <a href="node79.html" target="_blank">copy</a>
+                <a href="node148.html" target="_blank">qadd</a>
+                <a href="node167.html" target="_blank">qrem</a>
+                <a href="node176.html" target="_blank">rnam</a>
+                <a href="node184.html" target="_blank">seta</a>
+                <a href="node185.html" target="_blank">setc</a>
+                <a href="node186.html" target="_blank">sete</a>
+                <a href="node187.html" target="_blank">seti</a>
+                <a href="node188.html" target="_blank">seto</a>
+                <a href="node189.html" target="_blank">setr</a>
+                <a href="node203.html" target="_blank">typs</a>
+              </p>
+            </div>
+          </div>
+
+          <div id="group"><h2>Groups</h2>
+            <div class="indent1">
+              <p>
+                <a href="node105.html" target="_blank">grpa</a>
+                <a href="node106.html" target="_blank">grps</a>
+              </p>
+            </div>
+          </div>
+
+          <div id="sequence">
+            <h2>Sequences</h2>
+            <div class="indent1">
+              <p>
+                <a href="node168.html" target="_blank">qseq</a>
+                <a href="node181.html" target="_blank">seqa</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
