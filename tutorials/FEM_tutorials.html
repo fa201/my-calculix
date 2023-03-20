@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fabrice Pépin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Necessary for the proper size of screen on devices -->
+    <style>
+    html {
+    font-size: 62.5%;   /* Define standard font size as 0.625*16px=10px. So 2rem = 20 px */
+    background-color: white;
+    }
+
+    body {
+    font-family: Verdana, Arial, Helvetica, "Lucida Sans Unicode", Verdana, sans-serif;
+    font-size: 1.6rem;
+    min-height: 100vh;      /* Height is the one of browser */
+    max-width: 1400px;
+    margin: 0 auto;         /* Center the body widthwise */
+    padding: 0 1rem;
+    background-color: hsl(60, 20%, 98%);
+    line-height: 2.2rem;
+    color: hsl(0, 0%, 0%);
+    }
+
+    .header_title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsl(0, 0%, 0%);
+    height: 5rem;
+    line-height: 5rem;      /* Equal to height in order to center vertically */
+    }
+
+    p {
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    //background-color: yellow;
+    margin-top: 0.5rem;
+    }
+
+    h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: hsl(210, 80%, 0%);
+    padding-top: 0.5rem;
+    margin-bottom: 0;
+    }
+
+    h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: hsl(210, 80%, 0%);
+    padding-top: 0.5rem;
+    margin-bottom: 0;
+    }
+
+    div {
+    padding: 0rem 0.4rem;
+    }
+
+    #global {
+    background-color: hsl(210, 0%, 87%);
+    }
+
+    #efficient_engineer {
+    background-color: hsl(210, 0%, 70%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #engineer_software {
+    background-color: hsl(210, 10%, 50%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #inspect {
+    background-color: hsl(40, 100%, 35%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #modify {
+    background-color: hsl(50, 40%, 50%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #display {
+    background-color: hsl(60, 75%, 65%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #postprocessing {
+    background-color: hsl(320, 70%, 85%);
+    padding-bottom: 0.1rem;
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #animation {
+    background-color: hsl(360, 60%, 75%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #contour {
+    background-color: hsl(310, 70%, 75%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #preprocessing {
+    background-color: hsl(115, 60%, 75%);
+    padding-bottom: 0.5rem;
+    margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+    }
+
+    #prepare {
+    background-color: hsl(130, 52%, 60%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #mesh {
+    background-color: hsl(120, 70%, 60%);
+    margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+    padding-bottom: 0.1rem;
+    }
+
+    #oned {
+    background-color: hsl(70, 65%, 50%);
+    margin: 0.3rem 0 0 0;
+    }
+
+    #twod {
+    background-color: hsl(120, 52%, 48%);
+    margin: 0.3rem 0 0 0;
+    }
+
+    #threed {
+    background-color: hsl(120, 40%, 37%);
+    margin: 0.3rem 0 0 0;
+    }
+
+    #container {
+    background-color: hsl(210, 100%, 85%);
+    padding-bottom: 0.5rem;
+    margin: 0.3rem 4.5rem 0.5rem 4.5rem;
+    }
+
+    #set {
+    background-color: hsl(210, 100%, 77%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #group {
+    background-color: hsl(205, 70%, 65%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    #sequence {
+    background-color: hsl(215, 55%, 55%);
+    margin: 0.3rem 4.5rem 0 4.5rem;
+    }
+
+    .indent1 {
+    margin: 0rem 4.5rem;        // Keep same left margin as boxes
+    }
+
+    /*a:link, a:visited {
+    text-decoration: none;  /* Remove underlining */
+    color: hsl(0, 0%, 0%);
+    }*/
+    </style>
+    <title>FEM tutorials</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header_title">FEM tutorials</div>
+    </header>
+  <main>
+    <div id="global">
+      <h1>Tutorials</h1>
+
+      <div id="efficient_engineer"><h2>The Efficient Engineer</h2>
+        <div class="indent1">
+          <p>
+            <a href="https://www.youtube.com/watch?v=GHjopp47vvQ" target="_blank">Understanding the FEM Understanding the Finite Element Method</a><br>
+            <a href="https://www.youtube.com/watch?v=DLE-ieOVFjI" target="_blank">Understanding Young's modulus Understanding Young's Modulus</a><br>
+            <a href="https://www.youtube.com/watch?v=tuOlM3P7ygA" target="_blank">Understanding Poisson's ratio Understanding Poisson's Ratio</a><br>
+            <a href="https://www.youtube.com/watch?v=aQf6Q8t1FQE" target="_blank">An introduction to stress and strain An Introduction to Stress and Strain</a><br>
+            <a href="https://www.youtube.com/watch?v=AkX6JqlWRqc" target="_blank">Understanding True Stress and True Strain</a><br>
+            <a href="https://www.youtube.com/watch?v=xkbQnBAOFEg" target="_blank">Understanding Failure theories Understanding Failure Theories (Tresca, von Mises etc...)</a><br>
+          </p>
+        </div>
+      </div>
+
+      <div id="engineer_software"><h2>Engineering Software</h2>
+        <div class="indent1">
+          <p>
+            <a href="https://www.youtube.com/watch?v=yGMze1znR9E" target="_blank">Decide element type: 3D, 2D, plane strain or stress, axisymmetric, shell, membrane, beam</a><br>
+            <a href="https://www.youtube.com/watch?v=ae4WLrW4_9U" target="_blank">Mesh dependency/independency study: best mesh size</a><br>
+            <a href="https://www.youtube.com/watch?v=SqA_ga9DA54" target="_blank">Tensile test: Engineering and true stress vs. engineering, true and plastic strain curves</a><br>
+            <a href="https://www.youtube.com/watch?v=Wx8CN4lY8mY" target="_blank">Understanding plasticity theory (for Mises UMAT)</a><br>
+            <a href="https://www.youtube.com/watch?v=Xs5bupnAfAg" target="_blank">Understanding continuum damage mechanics</a><br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  </body>
+</html>
