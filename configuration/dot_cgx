@@ -1,29 +1,42 @@
 # Legend for contour
-font l 3	# Size of legend text
-steps 10	# Number of steps for contour
+font l 3  # Size of legend text
+steps 10  # Number of steps for contour
 
 # Graphical area
-font d 3	# Size of node labels, etc.
-view elem	# View element edge
-view edge 3	# Show edge of part. Width of 3 pixels
-view bg w	# Black background is not suitable as feature lines stay black
+font d 3    # Size of node labels, etc.
+view elem   # View element edge
+view edge 3 # Show edge of part. Width of 3 pixels
+view bg w   # Black background is not suitable as feature lines stay black
 
 # Command line in graphical area
-view cl		# Activate
-font c 4	# Size of command line (6 is a problem with ulin line)
+view cl   # Activate
+font c 4  # Size of command line (6 is a problem with ulin line)
 
 # Activate ruler in graphical area
-# My unit system is mm. 
+# My unit system is mm.
 # Do not add this comment after the command or the '#' will appear on graphical area.
-view rul mm	
+view rul mm
 
 # Initial view: ISO view with Y up
-rot y		# Align to Y axis
-rot r 135	# Rotate right 135°
-rot u 45	# Rotate up 45°
+rot y     # Align to Y axis
+rot r 135 # Rotate right 135°
+rot u 45  # Rotate up 45°
 
-# User menu 
+# User menu
 menu vue_iso_Z read /home/fabrice/.cgx_user/cgx_menu_iso_Z.fdl
 menu vue_iso_Y read /home/fabrice/.cgx_user/cgx_menu_iso_Y.fdl
 menu vue_iso_X read /home/fabrice/.cgx_user/cgx_menu_iso_X.fdl
 
+# Custom colors
+col pink 1 0.45 0.7
+col orange 0.75 0.5 0
+col darkgreen 0 0.3 0
+col seagreen 0.18 0.55 0.34
+col olive 0.5 0.5 0
+col skyblue 0 0.5 1
+col brown 0.5 0.25 0.07
+col violet 0.5 0 0.93
+col anthiquewhite 0.9 0.65 0.50
+col dodgerblue 0.05 0.5 0.75
+col maroon 0.20 0.05 0.01
+col grey 0.4 0.4 0.4
