@@ -41,7 +41,8 @@ These files should be copied to the CCX or CGX HTML documentation folder.
 - *cgx_tips.html*
 
 ## text_editor
-I use several text editors to write "*.inp" files. One of them is [Geany](https://www.geany.org/) which allows code folding. The configuration file for Calculix (named Abaqus) is given. It should be placed in ".config/geany/filedefs" folder for linux. This overrides Geany default settings.
+I use several text editors to write "*.inp" files. One of them is [Geany](https://www.geany.org/) which allows code folding and syntax highlighting. The configuration file for Calculix (named Abaqus) is given. It should be placed in ".config/geany/filedefs" folder for linux. This overrides Geany default settings.
+VSCode manages folding and syntax highlighting also with the extension [abaqus](https://marketplace.visualstudio.com/publishers/JP).
 
 ## Tutorials
 HTML files linking to video tutorials for:
