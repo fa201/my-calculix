@@ -32,10 +32,9 @@
       }
 
       p {
-      padding-top: 0;
-      padding-bottom: 0.5rem;
-      //background-color: yellow;
-      margin-top: 0.5rem;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      margin: 0;
       }
 
       h1 {
@@ -43,7 +42,7 @@
       font-weight: bold;
       color: hsl(210, 80%, 0%);
       padding-top: 0.5rem;
-      margin-bottom: 0;
+      padding-bottom: 0.5rem;
       }
 
       h2 {
@@ -98,64 +97,6 @@
       margin: 0.3rem 4.5rem 0 4.5rem;
       }
 
-      #contour {
-      background-color: hsl(310, 70%, 75%);
-      margin: 0.3rem 4.5rem 0 4.5rem;
-      }
-
-      #preprocessing {
-      background-color: hsl(115, 60%, 75%);
-      padding-bottom: 0.5rem;
-      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
-      }
-
-      #prepare {
-      background-color: hsl(130, 52%, 60%);
-      margin: 0.3rem 4.5rem 0 4.5rem;
-      }
-
-      #mesh {
-      background-color: hsl(120, 70%, 60%);
-      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
-      padding-bottom: 0.1rem;
-      }
-
-      #oned {
-      background-color: hsl(70, 65%, 50%);
-      margin: 0.3rem 0 0 0;
-      }
-
-      #twod {
-      background-color: hsl(120, 52%, 48%);
-      margin: 0.3rem 0 0 0;
-      }
-
-      #threed {
-      background-color: hsl(120, 40%, 37%);
-      margin: 0.3rem 0 0 0;
-      }
-
-      #container {
-      background-color: hsl(210, 100%, 85%);
-      padding-bottom: 0.5rem;
-      margin: 0.3rem 4.5rem 0.5rem 4.5rem;
-      }
-
-      #set {
-      background-color: hsl(210, 100%, 77%);
-      margin: 0.3rem 4.5rem 0 4.5rem;
-      }
-
-      #group {
-      background-color: hsl(205, 70%, 65%);
-      margin: 0.3rem 4.5rem 0 4.5rem;
-      }
-
-      #sequence {
-      background-color: hsl(215, 55%, 55%);
-      margin: 0.3rem 4.5rem 0 4.5rem;
-      }
-
       .indent1 {
       margin: 0rem 4.5rem;        // Keep same left margin as boxes
       }
@@ -176,7 +117,10 @@
       <div id="general">
         <h1>General</h1>
         <p>
-          <a href="node5.html" target="_blank">Golden rules</a>. Avoid gaps in numbering and start from
+          <a href="node5.html" target="_blank">Golden rules</a>. Avoid gaps in numbering nodes and elements and start from 1.
+        </p>
+        <p>
+          Max length for a line in *.inp file: 132 characters. Max length for user names (material, sets, etc.): 80 characters.
         </p>
 
         <div id="element_types"><h2>Elements</h2>
@@ -187,7 +131,8 @@
               <a href="node32.html" target="_blank">C3D20R</a> /
               <a href="node34.html" target="_blank">C3D10</a> /
               <a href="node30.html" target="_blank">C3D8I</a>
-              <br>
+            </p>
+            <p>
               <a href="node259.html" target="_blank">*ELEMENT</a> /
               <a href="node290.html" target="_blank">*MASS</a> /
               <a href="node317.html" target="_blank">*RIGID BODY</a> /
@@ -221,9 +166,7 @@
               <a href="node128.html" target="_blank">Coupling theory</a> /
               <a href="node237.html" target="_blank">*COUPLING</a> /
               <a href="node288.html" target="_blank">*KINEMATIC</a> /
-              <a href="node250.html" target="_blank">*DISTRIBUTING</a> force &amp; moment
-            </p>
-            <p>
+              <a href="node250.html" target="_blank">*DISTRIBUTING</a> force &amp; moment /
               <a href="node251.html" target="_blank">*DISTRIBUTING COUPLING</a>
             </p>
           </div>
@@ -232,6 +175,9 @@
         <div id="contact">
           <h2>Contact</h2>
           <div class="indent1">
+            <p>
+              Contact with quadratic elements must be face-to-face or mortar.
+            </p>
             <p>Theory for
               <a href="node67.html" target="_blank">Node-to-face</a> /
               <a href="node137.html" target="_blank">Face-to-face</a> /
@@ -284,7 +230,7 @@
               <a href="node292.html" target="_blank">*MATERIAL</a> /
               <a href="node256.html" target="_blank">*ELASTIC</a> /
               <a href="node245.html" target="_blank">*DENSITY</a> /
-              <a href="node311.html" target="_blank">**PLASTIC</a> /
+              <a href="node311.html" target="_blank">*PLASTIC</a> /
             </p>
           </div>
         </div>

@@ -1,0 +1,73 @@
+# Color the element and node sets.
+# For elements, the color label is attached to a node.
+# The view should not be changed.
+
+read cgx_color_demo.inp inp
+
+# Disable edge
+view edge off
+# Align the view to get color label render properly.
+rot z
+rot c 270
+
+# CGX standard colors
+plot e E1 r
+txt 7 n -0.03 0.03 "red"
+plus e E2 g
+txt 15 n -0.06 -0.04 "green"
+plus e E3 b
+txt 23 n -0.03 0.03 "blue"
+plus e E4 m
+txt 31 n -0.05 -0.08 "magenta"
+plus e E5 y
+txt 39 n -0.05 0.06 "yellow"
+plus e E6 t
+txt 47 n -0.06 -0.04 "turquoise"
+plus e E7 n
+txt 55 n -0.05 0.03 "neutral"
+plus e E8 w
+txt 63 n -0.05 -0.08 "white"
+plus e E9 k
+txt 71 n -0.03 0.08 "black"
+
+# My colors
+
+col pink 1 0.45 0.7
+plus e E10 pink
+txt 79 n -0.05 -0.04 "pink"
+col orange 0.75 0.5 0
+plus e E11 orange
+txt 87 n -0.05 0.03 "orange"
+col darkgreen 0 0.3 0
+plus e E12 darkgreen
+txt 95 n -0.06 -0.08 "darkgreen"
+col seagreen 0.18 0.55 0.34
+plus e E13 seagreen
+txt 103 n -0.06 0.08 "seagreen"
+col olive 0.5 0.5 0
+plus e E14 olive
+txt 111 n -0.06 -0.04 "olive"
+col skyblue 0 0.5 1
+plus e E15 skyblue
+txt 119 n -0.06 0.03 "skyblue"
+col brown 0.5 0.25 0.07
+plus e E15 brown
+txt 119 n -0.06 0.03 "brown"
+col violet 0.5 0 0.93
+plus e E16 violet
+txt 127 n -0.06 -0.08 "violet"
+col anthiquewhite 0.9 0.65 0.50
+plus e E17 anthiquewhite
+txt 135 n -0.06 0.08 "anthiquewhite"
+col dodgerblue 0.05 0.5 0.75
+plus e E18 dodgerblue
+txt 143 n -0.06 0.03 "dodgerblue"
+col maroon 0.20 0.05 0.01
+plus e E19 maroon
+txt 151 n -0.08 -0.04 "maroon"
+col grey 0.4 0.4 0.4
+plus e E20 grey
+txt 159 n 0 -0.08 "grey"
+
+# Display the color labels
+plus nt all k
